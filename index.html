@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Seissor</title>
+</head>
+<body>
+    <html>
+        <center><h1>RE-FRESH THE PAGE TO PLAY AGAIN</h1></center>
+    </html>
+    <script>
+        alert("Rock-Paper-Scissor Game\nThis is a Rock-Paper-Scissor Game Againts Computer\nGood Luck!");
+        alert("You'll play 5 rounds!!")
+       
+
+    let userStreak = 0;
+    let systemStreak = 0;
+    // let choices = ['rock', 'paper', 'scissor']
+
+    for (let round = 1; round <= 5; round++) {
+
+        alert(`Let's Start Round ${round} !!`)
+
+        // // User Choice
+        let userChoice = prompt("Enter Your Choice:\nSelect Your Choice in numbers ( 1 or 2 or 3 ):\n 1.rock\n2.paper\n3.scissor")
+
+        
+        
+        // System choice
+        let systemChoice =  Math.floor(Math.random()*3)+1;
+
+        let userValue;
+        let systemValue;
+
+        //convert numbers in values/names
+        if (userChoice == 1){
+            userValue = "rock";
+        } else if (userChoice == 2){
+            userValue = "paper";
+        } else if (userChoice == 3){
+            userValue = "scissor";
+        } else{
+            alert("Invalid Choice");
+            round--;
+            continue;
+        }
+
+        if (systemChoice == 1){
+            systemValue = "rock";
+        } else if (systemChoice == 2){
+            systemValue = "paper";
+        } else if (systemChoice == 3){
+            systemValue = "scissor";
+        } else{
+            alert("Invalid Choice");
+        }
+
+
+      alert(`Your Choice is ${userValue} \n Computer's choice is ${systemValue}`);
+
+      //main checking the winner
+      if(userChoice == systemChoice){
+        alert("This Round is Draw!!")
+      } else if((userChoice == 1 && systemChoice == 3) || ( userChoice == 2 && systemChoice == 1 ) || (userChoice == 3 && systemChoice == 2)){
+        alert("You Won this round!!");
+        userStreak++;
+      }else{
+        alert("Computer Won this round!!");
+        systemStreak++;
+      }
+
+      alert(`Score:\n Your Score: ${userStreak}\n Computer score: ${systemStreak}`)
+        
+        
+    }
+
+    // //Final result or score compare
+    userStreak > systemStreak ? alert(`👍Congratulations !! you're the Winner of this game`): userStreak < systemStreak ? alert(`👎You Lost the game Againts Computer!!!`):alert("The Game Is Daw🤝")
+
+
+
+    </script>
+</body>
+</html>
